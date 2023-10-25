@@ -1,11 +1,11 @@
 # Software Engineering Challenge
 
 Imagine for a moment that one of our product lines ships in various pack sizes:
-• 250 Items
-• 500 Items
-• 1000 Items
-• 2000 Items
-• 5000 Items
+- 250 Items
+- 500 Items
+- 1000 Items
+- 2000 Items
+- 5000 Items
 
 Our customers can order any number of these items through our website, but they will
 always only be given complete packs.
@@ -18,13 +18,13 @@ fulfil each order.
 
 Examples:
 
-| Items ordered | Correct no. of packs         | Incorrect number of packs                                                 |
+| Items ordered | Correct number of packs         | Incorrect number of packs                                                 |
 |---------------|------------------------------|---------------------------------------------------------------------------|
 | 1             | 1 x 250                      | 1 x 500 – more items than necessary                                       |
 | 250           | 1 x 250                      | 1 x 500 – more items than necessary                                       |
 | 251           | 1 x 500                      | 2 x 250 – more packs than necessary                                       |
-| 501           | 1 x 500,  1 x 250            | 1 x 1000 – more items than necessary, 3 x 250 – more packs than necessary |
-| 12001         | 2 x 5000,  1 x 2000, 1 x 250 | 3 x 5000 – more items than necessary                                      |
+| 501           | 1 x 500<br /> 1 x 250            | 1 x 1000 – more items than necessary <br /> 3 x 250 – more packs than necessary |
+| 12001         | 2 x 5000<br /> 1 x 2000<br /> 1 x 250 | 3 x 5000 – more items than necessary                                      |
 
 Write an application that can calculate the number of packs we need to ship to the customer.
 The API must be written in Golang &amp; be usable by a HTTP API (by whichever method you
@@ -37,4 +37,8 @@ removed without having to change the code.
 
 # Current implementation
 
-Current implementation uses dynamic programming to reduce the complexity to O(k*n)
+The [current implementation](main.go) uses dynamic programming to reduce the complexity to O(k*n)
+
+It doesnt implementats the API endpoints in favour of:
+- writing a quick interface that allows updating the packages too (they will persist on the server side)
+- writing [tests](main_test.go)
