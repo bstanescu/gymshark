@@ -16,6 +16,16 @@ fulfil the order.
 3. Within the constraints of Rules 1 &amp; 2 above, send out as few packs as possible to
 fulfil each order.
 
+Examples:
+
+| Items ordered | Correct no. of packs         | Incorrect number of packs                                                 |
+|---------------|------------------------------|---------------------------------------------------------------------------|
+| 1             | 1 x 250                      | 1 x 500 – more items than necessary                                       |
+| 250           | 1 x 250                      | 1 x 500 – more items than necessary                                       |
+| 251           | 1 x 500                      | 2 x 250 – more packs than necessary                                       |
+| 501           | 1 x 500,  1 x 250            | 1 x 1000 – more items than necessary, 3 x 250 – more packs than necessary |
+| 12001         | 2 x 5000,  1 x 2000, 1 x 250 | 3 x 5000 – more items than necessary                                      |
+
 Write an application that can calculate the number of packs we need to ship to the customer.
 The API must be written in Golang &amp; be usable by a HTTP API (by whichever method you
 choose).
@@ -24,3 +34,7 @@ choose).
 - Keep your application flexible so that pack sizes can be changed and added and
 removed without having to change the code.
 - Create a UI to interact with your API
+
+# Current implementation
+
+Current implementation uses dynamic programming to reduce the complexity to O(k*n)
