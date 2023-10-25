@@ -39,6 +39,6 @@ removed without having to change the code.
 
 The [current implementation](main.go) uses dynamic programming to reduce the complexity to O(k*n)
 
-It doesnt implementats the API endpoints in favour of:
+It doesnt implement the API endpoints, in favour of:
 - writing a quick interface that allows updating the packages too (they will persist on the server side)
 - writing [tests](main_test.go)
